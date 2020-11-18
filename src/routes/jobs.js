@@ -19,7 +19,10 @@ router.post('/', async (req, res) => {
         const savedJob = await Job.create({
             title: req.body.title,
             shortDescription: req.body.shortDescription,
-            longDescription: req.body.longDescription
+            longDescription: req.body.longDescription,
+            trainings: req.body.trainings,
+            exam: req.body.exam,
+            competences: req.body.competences
         })
         res.status(200).json(savedJob)
     } catch (err) {
@@ -42,7 +45,10 @@ router.patch('/:id', async (req, res) => {
             $set: {
                 title: req.body.title,
                 shortDescription: req.body.shortDescription,
-                longDescription: req.body.longDescription
+                longDescription: req.body.longDescription,
+                trainings: req.body.trainings,
+                exam: req.body.exam,
+                competences: req.body.competences
             }
         })
         res.status(200).json(job)

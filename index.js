@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 })
 
 // How to we start listening to the server
-app.listen(3000)
+app.listen(3030)
 
 // Replace the uri string with your MongoDB deployment's connection string.
 mongoose.connect(process.env.MONGO_CONNECTION_STRING, {useNewUrlParser: true}, () => {console.log('Connected to DB!')})

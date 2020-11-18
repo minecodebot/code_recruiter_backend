@@ -14,7 +14,7 @@ const JobSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    exercises: {
+    trainings: {
         type: [Number],
         required: true
     },
