@@ -24,6 +24,7 @@ router.post('/', async (req, res) => {
             carrerPath: req.body.carrerPath,
             jobSituation: req.body.jobSituation,
             presentationLetter: req.body.presentationLetter,
+            avatar: req.body.avatar
         })
         res.status(200).json(savedUser)
     } catch (err) {
@@ -40,7 +41,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.patch('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const user = await User.updateOne({_id: req.params.id}, {
             $set: {
@@ -51,6 +52,7 @@ router.patch('/:id', async (req, res) => {
                 carrerPath: req.body.carrerPath,
                 jobSituation: req.body.jobSituation,
                 presentationLetter: req.body.presentationLetter,
+                avatar: req.body.avatar
             }
         })
         res.status(200).json(user)
